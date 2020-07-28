@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<textarea id="myTextArea" cols="100" rows="30">
+	</textarea>
+	<button onclick="locSdt()">Loc</button>
+<script type="text/javascript">
+	function isNumeric(n) {
+	  return !isNaN(parseFloat(n)) && isFinite(n);
+	}
+	
+
+	function locSdt(){
+		var textArea = document.getElementById("myTextArea");
+		var lines = textArea.value.split("\n");
+
+		for(var i = 0;i < lines.length;i++){
+			lines[i] =String(lines[i]).replace(/\s/g, "");
+			//console.log(lines[i]);
+			lines[i] = parseInt(lines[i]); //loai bo so 0 dau dong
+			lines[i] =String(lines[i]); //chuyen qua string de dem ky tu
+			console.log(i+1);
+
+		    if (parseInt(lines[i]) != NaN && lines[i].length==9){
+		    	document.write("0"+parseInt(lines[i])+"<br/>");
+		    }
+	    
+		}	
+	}
+	
+</script>
+</body>
+</html>
